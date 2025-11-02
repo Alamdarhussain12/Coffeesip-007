@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bold Brew — Coffee Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f0f10;
+      --card:#121217;
+      --accent:#f3b33d;
+      --muted:#bdbdbd;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:linear-gradient(180deg,#0b0b0c 0%, #121214 100%); color:#fff; -webkit-font-smoothing:antialiased;}
+1
+    /* Header / Nav */
+    header{display:flex;align-items:center;justify-content:space-between;padding:28px 6vw;}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:62px;height:62px;border-radius:12px;background:linear-gradient(135deg,#2e2a2e, #201c1d);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.6);}
+    .logo strong{font-family:'Playfair Display',serif;font-size:22px;color:var(--accent);}
+    .brand h1{margin:0;font-family:'Playfair Display',serif;font-size:20px;letter-spacing:0.6px}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-size:15px}
+    .cta{background:var(--accent);color:#111;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;padding:40px 6vw;align-items:center}
+    .hero-left{max-width:700px}
+    .eyebrow{display:inline-block;background:var(--glass);color:var(--muted);padding:6px 10px;border-radius:999px;font-size:13px;margin-bottom:18px}
+    .title{font-family:'Playfair Display',serif;font-size:48px;line-height:1.02;margin:6px 0}
+    .title .bold-name{display:inline-block;background:linear-gradient(90deg,#ffffff, #f3b33d);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+    .desc{color:var(--muted);margin:18px 0 24px;font-size:16px;max-width:60%}
+    .hero-actions{display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700}
+    .btn-primary{background:var(--accent);color:#111}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* Right card */
+    .right-card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:18px;padding:18px;backdrop-filter: blur(6px);}
+    .cup{display:flex;gap:14px;align-items:center}
+    .cup img{width:110px;height:110px;border-radius:14px;object-fit:cover}
+    .cup h3{margin:0}
+    .price{color:var(--accent);font-weight:800}
+    .meta{color:var(--muted);font-size:13px}
+
+    /* Menu */
+    .menu{padding:40px 6vw;}
+    .section-title{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:18px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+    .card{background:var(--card);padding:16px;border-radius:14px}
+    .card img{width:100%;height:120px;object-fit:cover;border-radius:10px}
+    .card h4{margin:12px 0 6px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Gallery + Footer layout */
+    .split{display:grid;grid-template-columns:1fr 320px;gap:28px;padding:40px 6vw 80px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .thumb{height:110px;border-radius:10px;overflow:hidden}
+    .thumb img{width:100%;height:100%;object-fit:cover}
+    .sidebar{background:var(--glass);padding:18px;border-radius:12px}
+
+    footer{padding:34px 6vw;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center}
+    .socials{display:flex;gap:12px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .split{grid-template-columns:1fr;}
+      .hero .desc{max-width:100%}
+    }
+    @media (max-width:480px){
+      .title{font-size:34px}
+      .logo{width:52px;height:52px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><strong>BB</strong></div>
+      <div>
+        <h1><span style="font-weight:800">BOLD BREW</span></h1>
+        <div style="font-size:12px;color:var(--muted)">Artisan coffee — roasted fresh</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a class="cta" href="#order">Order Now</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <span class="eyebrow">Now Serving</span>
+        <h2 class="title">Wake up with <span class="bold-name">BOLD BREW</span></h2>
+        <p class="desc">Handcrafted espresso and single-origin brews. Cozy atmosphere, fast Wi‑Fi, and pastries baked daily. Come for the coffee — stay for the vibe.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#order">Order Online</a>
+          <a class="btn btn-ghost" href="#menu">See Menu</a>
+        </div>
+      </div>
+
+      <aside class="right-card">
+        <div class="cup">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="coffee cup">
+          <div>
+            <h3>Signature Espresso</h3>
+            <div class="meta">Double shot • velvety crema</div>
+            <div style="margin-top:8px" class="price">Rs. 420</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;color:var(--muted);font-size:14px">Open daily 7:30 AM — 10:00 PM<br>Free Wi‑Fi • Cozy seating • Takeaway</div>
+      </aside>
+    </section>
+
+    <section id="menu" class="menu">
+      <div class="section-title">Our Menu</div>
+      <div class="cards">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="espresso">
+          <h4>Espresso</h4>
+          <p>Rich, concentrated coffee with a long finish.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1506086679522-a4d3b4a7f53e?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="cappuccino">
+          <h4>Cappuccino</h4>
+          <p>Perfect foam and silky milk to balance the shot.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="cold brew">
+          <h4>Cold Brew</h4>
+          <p>Slow-steeped, smooth, and low acidity.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="pastry">
+          <h4>Pastries</h4>
+          <p>Daily-baked croissants, muffins, and cookies.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="split" id="gallery">
+      <div>
+        <h3 class="section-title">Gallery</h3>
+        <div class="gallery">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="shop"></div>
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="barista"></div>
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1484981184820-2e84ea0b1b9e?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="latte art"></div>
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="interior"></div>
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="beans"></div>
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="cup on table"></div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <h4 style="margin:0 0 10px">Visit Us</h4>
+        <div style="color:var(--muted);font-size:14px">123 Coffee Lane, DHA phase-6<br>Karachi, Pakistan</div>
+        <div style="margin-top:12px"><strong>Hours</strong><br><span style="color:var(--muted);font-size:14px">Mon–Sun 7:30 AM — 10:00 PM</span></div>
+        <div style="margin-top:14px"><a class="btn btn-primary" href="#contact">Reserve a Table</a></div>
+      </aside>
+    </section>
+
+    <section id="contact" style="padding:40px 6vw 100px;">
+      <div style="max-width:900px;margin:auto;display:grid;grid-template-columns:1fr 320px;gap:20px;">
+        <div style="background:var(--card);padding:18px;border-radius:12px;">
+          <h3 style="margin-top:0">Get in touch</h3>
+          <p style="color:var(--muted)">Questions about our menu, events or catering? Send us a message.</p>
+          <form onsubmit="submitForm(event)">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;">
+              <input required placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff">
+              <input required placeholder="Email" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff">
+            </div>
+            <textarea required placeholder="Message" style="margin-top:10px;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff;min-height:110px;width:100%"></textarea>
+            <div style="margin-top:12px"><button class="btn btn-primary" type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+        <div style="background:var(--glass);padding:18px;border-radius:12px;">
+          <h4 style="margin-top:0">Contact</h4>
+          <div style="color:var(--muted);font-size:14px">Phone: +92 3233057498<br>Email: hello@boldbrew.example</div>
+          <h4 style="margin-top:14px">Follow</h4>
+          <div class="socials"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">X</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <strong>BOLD BREW</strong> — Roasted with purpose</div>
+    <div style="color:var(--muted)">Made with ☕ in Karachi</div>
+  </footer>
+
+  <script>
+    function submitForm(e){
+      e.preventDefault();
+      alert('Thanks! Your message was sent. (Demo only)');
+      e.target.reset && e.target.reset();
+    }
+  </script>
+</body>
+</html>
